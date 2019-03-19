@@ -1,0 +1,51 @@
+<conf>
+    <modules>
+        <module>
+            <name>TEST</name>
+            <description>Testing module which makes it easy to check if it received messages from subjects</description>
+            <subscriptions>
+                <packets/>
+                <bus>DAI, error</bus>
+            </subscriptions>
+        </module>
+        <module>
+            <name>DAI</name>
+            <description>Dynamic ARP Inspection</description>
+            <subscriptions>
+                <packets>ARP</packets>
+                <bus/>
+            </subscriptions>
+            <reference-table>
+                <entry>
+                    <type>switch</type>
+                    <ip>145.94.212.11</ip>
+                    <mac>a1:b2:c3:d4:e5:f6</mac>
+                </entry>
+                <entry>
+                    <type>official</type>
+                    <ip>145.94.212.99</ip>
+                    <mac>aa:bb:cc:dd:ee:ff</mac>
+                </entry>
+            </reference-table>
+            <rules>
+                <rule>
+                    <name>static-binding</name>
+                    <description>Binding belongs to a static ARP table</description>
+                    <flag>error</flag>
+                </rule>
+                <rule>
+                    <name>response-from-broadcasting</name>
+                    <description>Response was from the broadcasting address which will cause host to broadcast all messages sent to IP address</description>
+                    <flag>error</flag>
+                </rule>
+                <rule>
+                    <name>overriding-existing-binding</name>
+                    <description>Response triggers an update of an entry in the ARP table</description>
+                    <flag>notice</flag>
+                </rule>
+            </rules>
+        </module>
+    </modules>
+
+
+</conf>
