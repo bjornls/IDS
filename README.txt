@@ -1,9 +1,9 @@
-Advanced Network Security
-Project 2
+Please note that this is a university project written within a small timeframe, and with number of other deadlines. The software is written from scratch with no major guidelines. The Network_Security_2.pdf provides some documentation for the overall functionality.
+
+
+
 
 Bjorn Sigurbergsson
-4594479
-b.l.sigurbergsson@student.tudelft.nl
 
 
 To install:
